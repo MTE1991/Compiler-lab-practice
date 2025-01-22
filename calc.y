@@ -11,7 +11,7 @@ void yyerror(const char *s);
 
 %%
 expr_list: /* empty */                { /* Do nothing for an empty input */ }
-         | expr_list expr '\n'       { printf("Result: %d\n", $2); }
+         | expr_list expr '\n'       { printf("Result: %d\n", $$); }
          ;
 expr: expr '+' expr { $$ = $1 + $3; }
     | expr '-' expr { $$ = $1 - $3; }
